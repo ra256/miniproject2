@@ -4,17 +4,16 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
-class InsertUserTest extends TestCase
+class InsertCarTest extends TestCase
 {
     /**
      * A basic test example.
      *
      * @return void
      */
-
-    public function testinsertUserTest()
+    public function testinsertCarTest()
     {
-        $user = factory(\App\User::class)->make();
+        $user = factory(\App\Car::class)->make();
         $this->assertTrue($user->save());
     }
 }

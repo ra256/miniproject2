@@ -4,7 +4,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
-class InsertUserTest extends TestCase
+class UpdateUserTest extends TestCase
 {
     /**
      * A basic test example.
@@ -12,9 +12,11 @@ class InsertUserTest extends TestCase
      * @return void
      */
 
-    public function testinsertUserTest()
+    public function testbasicUpdateUserTest()
     {
-        $user = factory(\App\User::class)->make();
+        $user = User::all()->last();
+        $user-> where('name', 'Haley Kub')
+            -> update(['name' => 'Steve Smith']);
         $this->assertTrue($user->save());
     }
 }
